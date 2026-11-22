@@ -3,7 +3,8 @@ import { ref, onBeforeUnmount } from 'vue'
 import BaseLab from '@/components/guia/BaseLab.vue'
 
 const ATRASO = 2000 // ms — simula uma internet lenta
-const IMAGEM = '/img/cidade.jpg'
+// BASE_URL = '/' na Vercel e '/trena/' no GitHub Pages
+const IMAGEM = `${import.meta.env.BASE_URL}img/cidade.jpg`
 
 // Um objeto por painel: sem e com width/height no HTML
 const paineis = ref([

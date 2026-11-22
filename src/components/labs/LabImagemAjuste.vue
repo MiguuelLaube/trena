@@ -2,6 +2,10 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import BaseLab from '@/components/guia/BaseLab.vue'
 
+// BASE_URL = '/' na Vercel e '/trena/' no GitHub Pages
+const img = (nome) => `${import.meta.env.BASE_URL}img/${nome}`
+const srcsetCidade = ['480', '800', '1200'].map((w) => `${img(`cidade-${w}.jpg`)} ${w}w`).join(', ')
+
 const proporcao = ref('1 / 1')
 const ajuste = ref('cover')
 const proporcoes = ['16 / 9', '4 / 3', '1 / 1', '3 / 4']
@@ -58,7 +62,7 @@ onBeforeUnmount(() => window.removeEventListener('resize', atualizarEscolha))
       </div>
       <div class="ajuste__moldura">
         <img
-          src="/img/cidade-800.jpg"
+          :src="img('cidade-800.jpg')"
           width="800"
           height="500"
           alt="Ilustração de prédios coloridos com um sol amarelo"
@@ -75,8 +79,8 @@ onBeforeUnmount(() => window.removeEventListener('resize', atualizarEscolha))
     <img
       ref="imgSrcset"
       class="ajuste__srcset"
-      src="/img/cidade-800.jpg"
-      srcset="/img/cidade-480.jpg 480w, /img/cidade-800.jpg 800w, /img/cidade-1200.jpg 1200w"
+      :src="img('cidade-800.jpg')"
+      :srcset="srcsetCidade"
       sizes="(min-width: 64rem) 40rem, 100vw"
       width="1200"
       height="750"

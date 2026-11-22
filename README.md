@@ -6,7 +6,7 @@ Guia feito em **Vue 3 + Vite** para o Projeto de Revisão "Responsividade" — A
 
 **Autor:** Miguel Viana Laube — RA 26180746
 
-- 🌐 Site publicado: _[cole aqui o link da Vercel/Netlify]_
+- 🌐 Site publicado: https://miguuellaube.github.io/trena/
 - 📱 Print no celular: ver `docs/celular.png`
 
 ## Seções (uma rota cada)
@@ -64,6 +64,8 @@ npm run lint
 Requer Node 22.18+ (ou 24.12+).
 
 ## Publicando
+
+**GitHub Pages (atual):** o workflow `.github/workflows/pages.yml` roda a cada push na `main`, gera o build com `npm run build:pages` (base `/trena/`) e publica a pasta `dist` na branch `gh-pages`. O `404.html` é uma cópia do `index.html`, para as rotas do Vue Router funcionarem ao abrir um link direto.
 
 **Vercel (recomendado):** importe o repositório em vercel.com → framework "Vite" → Deploy. O `vercel.json` já redireciona todas as rotas para o `index.html` (senão abrir `/unidades` direto dá 404).
 

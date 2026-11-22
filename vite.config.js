@@ -5,7 +5,9 @@ import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
-export default defineConfig({
+// --mode pages → site publicado em https://miguuellaube.github.io/trena/
+export default defineConfig(({ mode }) => ({
+  base: mode === 'pages' ? '/trena/' : '/',
   plugins: [
     vue(),
     vueDevTools(),
@@ -15,4 +17,4 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
-})
+}))
