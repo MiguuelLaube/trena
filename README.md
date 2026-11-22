@@ -4,7 +4,7 @@
 
 Guia feito em **Vue 3 + Vite** para o Projeto de Revisão "Responsividade" — Análise e Desenvolvimento de Sistemas, Faculdade de Tecnologia SENAI Félix Guisard.
 
-**Autor:** Miguel Viana Laube — RA 26180746
+**Dupla:** Miguel Viana Laube (RA 26180746) e Luiz Carlos de Vasconcellos Junior (RA 26180844)
 
 - 🌐 Site publicado: https://miguuellaube.github.io/trena/
 - 📱 Print no celular: ver `docs/celular.png`
