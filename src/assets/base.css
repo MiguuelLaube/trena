@@ -1,0 +1,233 @@
+/*
+  ESTILOS GLOBAIS — mobile-first.
+  Tudo fora de @media é o celular. As media queries só usam min-width.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* 100% = "o tamanho que a pessoa escolheu no navegador". Nunca troque por 16px! */
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background-color: var(--cor-papel);
+  color: var(--cor-tinta);
+  font-family: var(--fonte-texto);
+  font-size: var(--texto-m);
+  line-height: 1.6;
+  /* Garantia extra contra rolagem horizontal acidental */
+  overflow-x: clip;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--fonte-titulo);
+  line-height: 1.05;
+  margin: 0 0 var(--esp-3);
+  text-wrap: balance;
+  /* palavras enormes ("RESPONSIVIDADE") quebram em vez de vazar em telas de 320px */
+  overflow-wrap: break-word;
+}
+
+h2 {
+  font-size: var(--texto-gg);
+  margin-top: var(--esp-7);
+}
+
+h3 {
+  font-size: var(--texto-g);
+  margin-top: var(--esp-5);
+}
+
+p,
+ul,
+ol {
+  margin: 0 0 var(--esp-4);
+}
+
+li + li {
+  margin-top: var(--esp-1);
+}
+
+a {
+  color: inherit;
+  text-decoration-color: var(--cor-marca);
+  text-decoration-thickness: 0.125rem;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  background-color: var(--cor-trena-clara);
+}
+
+:focus-visible {
+  outline: 0.1875rem solid var(--cor-marca);
+  outline-offset: 0.125rem;
+}
+
+code,
+kbd {
+  font-family: var(--fonte-codigo);
+  font-size: 0.88em;
+  background-color: var(--cor-papel-2);
+  padding: 0.1em 0.35em;
+  border-radius: 0.25rem;
+  /* palavras compridas tipo grid-template-columns podem quebrar */
+  overflow-wrap: anywhere;
+}
+
+strong {
+  font-weight: 700;
+}
+
+/* ---------- Botões e controles ---------- */
+.botao {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--esp-2);
+  min-height: 2.75rem; /* alvo de toque confortável */
+  padding: var(--esp-2) var(--esp-4);
+  font: inherit;
+  font-weight: 700;
+  font-size: var(--texto-p);
+  color: var(--cor-tinta);
+  background-color: var(--cor-trena);
+  border: var(--borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.botao:hover {
+  transform: translate(-0.0625rem, -0.0625rem);
+}
+
+.botao:active {
+  transform: translate(0.25rem, 0.25rem);
+  box-shadow: none;
+}
+
+.botao--claro {
+  background-color: var(--cor-papel);
+}
+
+.botao:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.campo {
+  display: grid;
+  gap: var(--esp-1);
+  align-content: end; /* inputs alinhados mesmo se um rótulo quebrar linha */
+  font-size: var(--texto-p);
+  font-weight: 700;
+}
+
+.campo input,
+.campo select {
+  font: inherit;
+  font-weight: 400;
+  min-height: 2.75rem;
+  padding: var(--esp-2) var(--esp-3);
+  background-color: var(--cor-papel);
+  border: var(--borda);
+  border-radius: var(--raio);
+  color: var(--cor-tinta);
+  width: 100%;
+  min-width: 0;
+}
+
+.campo input[type='range'] {
+  padding: 0;
+  border: none;
+  background: transparent;
+  accent-color: var(--cor-marca);
+}
+
+.campo > .saida {
+  justify-self: start;
+}
+
+/* ---------- Utilitários ---------- */
+
+/* Fita de trena: dois gradientes repetidos fazem os traços curtos e longos */
+.regua {
+  height: 0.875rem;
+  background-color: var(--cor-trena);
+  background-image:
+    linear-gradient(90deg, var(--cor-tinta) 1px, transparent 1px),
+    linear-gradient(90deg, var(--cor-tinta) 1px, transparent 1px);
+  background-size:
+    0.5rem 45%,
+    2.5rem 100%;
+  background-repeat: repeat-x;
+  background-position: left top;
+  border-bottom: var(--borda);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.etiqueta {
+  display: inline-block;
+  font-family: var(--fonte-codigo);
+  font-size: var(--texto-pp);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.5rem;
+  background-color: var(--cor-tinta);
+  color: var(--cor-trena);
+  border-radius: 0.25rem;
+}
+
+.leitura {
+  max-width: var(--largura-texto);
+}
+
+.saida {
+  font-family: var(--fonte-codigo);
+  font-weight: 600;
+  background-color: var(--cor-tinta);
+  color: var(--cor-trena);
+  padding: 0.1em 0.45em;
+  border-radius: 0.25rem;
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

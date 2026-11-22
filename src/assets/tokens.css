@@ -1,0 +1,60 @@
+/*
+  DESIGN TOKENS
+  Todas as cores, fontes e espaçamentos do guia moram aqui, em :root.
+  Se quiser mudar a cara do site, mude aqui — os componentes só usam var(--...).
+
+  Breakpoints (variáveis CSS NÃO funcionam dentro de @media, por isso ficam anotados):
+    --bp-md  40rem  (640px)   tablet / celular deitado
+    --bp-lg  64rem  (1024px)  notebook — o menu vira barra lateral
+*/
+:root {
+  /* Cores — inspiradas numa trena de obra: fita amarela, tinta preta, marca vermelha */
+  --cor-papel: #f3efe4;
+  --cor-papel-2: #e8e1cf;
+  --cor-papel-3: #ddd4bd;
+  --cor-tinta: #1d1b16;
+  --cor-tinta-suave: #4d483d;
+  --cor-trena: #f2c230;
+  --cor-trena-clara: #f9e29a;
+  --cor-marca: #c8361f;
+  --cor-ok: #2c7a4b;
+  --cor-ok-clara: #d4ecd9;
+  --cor-erro-clara: #f6d6cf;
+  --cor-codigo-fundo: #23211b;
+  --cor-codigo-texto: #efe9d8;
+  --cor-codigo-comentario: #a9a08a;
+
+  /* Fontes — Atkinson Hyperlegible foi desenhada para pessoas com baixa visão */
+  --fonte-texto: 'Atkinson Hyperlegible', system-ui, sans-serif;
+  --fonte-titulo: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --fonte-codigo: 'JetBrains Mono', ui-monospace, 'Cascadia Code', monospace;
+
+  /* Tamanhos de texto — sempre em rem, para respeitar a configuração do navegador */
+  --texto-pp: 0.8125rem;
+  --texto-p: 0.9375rem;
+  --texto-m: 1.0625rem;
+  --texto-g: 1.25rem;
+  --texto-gg: 1.75rem;
+  --texto-titulo: clamp(2.25rem, 1.6rem + 3vw, 3.75rem);
+
+  /* Espaçamentos — escala em rem */
+  --esp-1: 0.25rem;
+  --esp-2: 0.5rem;
+  --esp-3: 0.75rem;
+  --esp-4: 1rem;
+  --esp-5: 1.5rem;
+  --esp-6: 2rem;
+  --esp-7: 3rem;
+  --esp-8: 4rem;
+
+  /* Formas */
+  --raio: 0.375rem;
+  --borda-largura: 2px;
+  --borda: var(--borda-largura) solid var(--cor-tinta);
+  --sombra: 0.25rem 0.25rem 0 var(--cor-tinta);
+
+  /* Larguras de leitura */
+  --largura-texto: 44rem;
+  --largura-conteudo: 60rem;
+  --largura-menu: 16rem;
+}
