@@ -60,6 +60,7 @@ function mudarEscala(evento) {
 
 <template>
   <BaseLab
+    ancora="unidades"
     titulo="Conversor de unidades → px"
     instrucao="Escolha um valor e uma unidade. O navegador mede de verdade e mostra quantos px aquilo vira agora."
   >

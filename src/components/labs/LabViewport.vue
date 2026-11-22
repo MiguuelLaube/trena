@@ -19,6 +19,7 @@ const zoom = computed(() => Math.round((LARGURA_CELULAR / larguraLayout.value) *
 
 <template>
   <BaseLab
+    ancora="viewport"
     titulo="Celular com e sem a meta viewport"
     instrucao="Ligue e desligue a meta tag e veja como o mesmo site (com as mesmas media queries) aparece no celular."
   >

@@ -53,6 +53,7 @@ const cssGerado = computed(
 
 <template>
   <BaseLab
+    ancora="grid"
     titulo="Régua do Grid: auto-fit + minmax()"
     instrucao="Arraste a largura do contêiner e descubra em que ponto os cards mudam de coluna. Nenhuma media query envolvida!"
   >

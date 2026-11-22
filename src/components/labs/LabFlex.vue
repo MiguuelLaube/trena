@@ -34,6 +34,7 @@ const css = computed(
 
 <template>
   <BaseLab
+    ancora="flex"
     titulo="Painel do Flexbox"
     instrucao="Mude as propriedades e veja os itens se reorganizarem. O CSS gerado aparece embaixo."
   >

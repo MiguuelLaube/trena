@@ -39,6 +39,7 @@ async function trocarPorApi() {
 
 <template>
   <BaseLab
+    ancora="key"
     titulo="v-for com e sem :key"
     instrucao="1) Digite algo no campo do 2º animal nas DUAS listas. 2) Clique em “Remover o 1º animal”. 3) Veja onde o seu texto foi parar."
   >

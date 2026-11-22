@@ -36,6 +36,7 @@ onBeforeUnmount(() => window.removeEventListener('resize', atualizarEscolha))
 
 <template>
   <BaseLab
+    ancora="ajuste"
     titulo="aspect-ratio, object-fit e srcset"
     instrucao="Troque a proporção da caixa e o object-fit. Depois veja qual arquivo o srcset escolheu para a sua tela."
   >

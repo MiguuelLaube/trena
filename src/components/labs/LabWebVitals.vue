@@ -84,6 +84,7 @@ function provocarPulo() {
 
 <template>
   <BaseLab
+    ancora="vitals"
     titulo="Medidor de Core Web Vitals (ao vivo)"
     instrucao="Estes números são desta página, agora. Use os botões para piorar o INP e o CLS de propósito."
   >

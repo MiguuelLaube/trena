@@ -5,6 +5,19 @@ import { equipe } from '@/data/equipe'
 import { useProgressoStore } from '@/stores/progresso'
 
 const progresso = useProgressoStore()
+
+// Atalhos para os laboratórios (útil na apresentação!)
+const labs = [
+  { nome: 'Celular com e sem a meta viewport', para: '/por-que-importa#lab-viewport' },
+  { nome: 'Conversor de unidades → px e px × rem', para: '/unidades#lab-unidades' },
+  { nome: 'Painel do Flexbox', para: '/flexbox-e-grid#lab-flex' },
+  { nome: 'Régua do Grid (auto-fit + minmax)', para: '/flexbox-e-grid#lab-grid' },
+  { nome: 'O texto que pula (CLS)', para: '/imagens#lab-pulo' },
+  { nome: 'aspect-ratio, object-fit e srcset', para: '/imagens#lab-ajuste' },
+  { nome: 'v-for com e sem :key (+ API)', para: '/boas-praticas-vue#lab-key' },
+  { nome: 'Medidor de Core Web Vitals', para: '/boas-praticas-vue#lab-vitals' },
+  { nome: 'A trena (indicador de largura) — sempre no canto da tela', para: '/' },
+]
 const integrantes = computed(() => equipe.filter((p) => p.nome))
 
 const resumos = {
@@ -66,6 +79,15 @@ const resumos = {
             <span class="cartao__resumo">{{ resumos[s.nome] }}</span>
             <span v-if="progresso.foiVisitada(s.nome)" class="cartao__ok">✓ visitada</span>
           </RouterLink>
+        </li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Os laboratórios</h2>
+      <ol class="labs">
+        <li v-for="l in labs" :key="l.nome">
+          <RouterLink :to="l.para">{{ l.nome }}</RouterLink>
         </li>
       </ol>
     </section>
@@ -197,6 +219,11 @@ const resumos = {
   font-size: var(--texto-pp);
   font-weight: 700;
   color: var(--cor-ok);
+}
+
+.labs {
+  padding-left: var(--esp-5);
+  max-width: var(--largura-texto);
 }
 
 .equipe ul {

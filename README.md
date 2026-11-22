@@ -4,10 +4,10 @@
 
 Guia feito em **Vue 3 + Vite** para o Projeto de Revisão "Responsividade" — Análise e Desenvolvimento de Sistemas, Faculdade de Tecnologia SENAI Félix Guisard.
 
-**Dupla:** Miguel Viana Laube (RA 26180746) e _[nome da dupla]_
+**Autor:** Miguel Viana Laube — RA 26180746
 
 - 🌐 Site publicado: _[cole aqui o link da Vercel/Netlify]_
-- 📱 Print no celular: _[adicione a imagem em `docs/celular.png`]_
+- 📱 Print no celular: ver `docs/celular.png`
 
 ## Seções (uma rota cada)
 

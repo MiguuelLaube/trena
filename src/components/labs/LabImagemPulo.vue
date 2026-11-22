@@ -47,6 +47,7 @@ onBeforeUnmount(() => clearTimeout(temporizador))
 
 <template>
   <BaseLab
+    ancora="pulo"
     titulo="O texto que pula"
     instrucao="Clique no botão: as duas imagens vão demorar 2 segundos para chegar. Fique de olho no parágrafo embaixo de cada uma."
   >

@@ -1,12 +1,18 @@
 <script setup>
-defineProps({
+import { computed } from 'vue'
+
+const props = defineProps({
   titulo: { type: String, required: true },
   instrucao: { type: String, default: '' },
+  // âncora para linkar direto no lab (ex.: /imagens#lab-pulo)
+  ancora: { type: String, default: '' },
 })
+
+const id = computed(() => (props.ancora ? `lab-${props.ancora}` : undefined))
 </script>
 
 <template>
-  <section class="lab">
+  <section :id="id" class="lab">
     <header class="lab__topo">
       <span class="lab__selo" aria-hidden="true">LAB</span>
       <div>
@@ -24,6 +30,7 @@ defineProps({
 .lab {
   margin: var(--esp-6) 0;
   max-width: var(--largura-conteudo);
+  scroll-margin-top: 6rem; /* não fica escondido atrás do menu fixo */
   border: var(--borda);
   border-radius: var(--raio);
   background-color: #fffdf6;
